@@ -21,14 +21,14 @@ public class Schedule {
     @GeneratedValue
     private Long id;
 
-    @NonNull
-    private long hotelId;
+    @OneToOne
+    private Hotel hotel;
 
-    @NonNull
-    private long carId;
+    @OneToOne
+    private Car car;
 
-    @NonNull
-    private long viewId;
+    @OneToOne
+    private View view;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<ScheduleDetail> scheduleDetails;

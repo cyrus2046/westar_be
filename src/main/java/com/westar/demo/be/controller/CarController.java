@@ -45,7 +45,7 @@ class CarController {
                 .body(result);
     }
 
-    @PutMapping("/car/{id}")
+    @PutMapping("/car")
     ResponseEntity<Car> updateCar(@Valid @RequestBody Car car) {
         log.info("Request to update car: {}", car);
         Car result = carRepository.save(car);

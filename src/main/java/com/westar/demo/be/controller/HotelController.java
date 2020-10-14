@@ -45,7 +45,7 @@ class HotelController {
                 .body(result);
     }
 
-    @PutMapping("/hotel/{id}")
+    @PutMapping("/hotel")
     ResponseEntity<Hotel> updateHotel(@Valid @RequestBody Hotel hotel) {
         log.info("Request to update hotel: {}", hotel);
         Hotel result = hotelRepository.save(hotel);

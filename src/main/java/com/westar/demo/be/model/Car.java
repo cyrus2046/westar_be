@@ -28,5 +28,6 @@ public class Car {
     @NonNull
     private String license;
     private Integer seat;
+    private String name;
     private String remark;
 }

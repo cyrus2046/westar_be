@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Optional;
 
 @RestController
@@ -45,9 +47,10 @@ class ViewController {
                 .body(result);
     }
 
-    @PutMapping("/view/{id}")
+    @PutMapping("/view")
     ResponseEntity<View> updateView(@Valid @RequestBody View view) {
         log.info("Request to update view: {}", view);
+
         View result = viewRepository.save(view);
         return ResponseEntity.ok().body(result);
     }

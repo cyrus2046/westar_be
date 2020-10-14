@@ -39,7 +39,12 @@ class ScheduleController {
 
     @PostMapping("/schedule")
     ResponseEntity<Schedule> createSchedule(@Valid @RequestBody Schedule schedule) throws URISyntaxException {
+
+        //schedule.getHotel().setId(Long.parseLong(schedule.getHotel().getName()));
+        //schedule.getCar().setId(Long.parseLong(schedule.getCar().getName()));
+        //schedule.getView().setId(Long.parseLong(schedule.getView().getName()));
         log.info("Request to create schedule: {}", schedule);
+
         Schedule result = scheduleRepository.save(schedule);
         return ResponseEntity.created(new URI("/api/schedule/" + result.getId()))
                 .body(result);
