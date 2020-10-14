@@ -31,7 +31,7 @@ class HotelController {
     }
 
     @GetMapping("/hotel/{id}")
-    ResponseEntity<?> getGroup(@PathVariable Long id) {
+    ResponseEntity<?> getHotel(@PathVariable Long id) {
         Optional<Hotel> hotel = hotelRepository.findById(id);
         return hotel.map(response -> ResponseEntity.ok().body(response))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -53,7 +53,7 @@ class HotelController {
     }
 
     @DeleteMapping("/hotel/{id}")
-    public ResponseEntity<?> deleteGroup(@PathVariable Long id) {
+    public ResponseEntity<?> deleteHotel(@PathVariable Long id) {
         log.info("Request to delete hotel: {}", id);
         hotelRepository.deleteById(id);
         return ResponseEntity.ok().build();
