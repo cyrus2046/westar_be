@@ -33,6 +33,8 @@ public class Schedule {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<ScheduleDetail> scheduleDetails;
 
-    private Integer duration; //in minutes
+    private Integer toDuration; //in minutes
+    private Integer backDuration; //in minutes
+
     private String remark;
 }

@@ -23,7 +23,7 @@ public class ScheduleDetail {
     @GeneratedValue
     private Long id;
     @NonNull
-    private Date toTime;
-    private Date backTime;
+    private Date startTime;
+    private Date arrivalTime;
     private String remark;
 }
