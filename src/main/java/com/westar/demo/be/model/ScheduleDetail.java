@@ -1,5 +1,6 @@
 package com.westar.demo.be.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -23,7 +24,10 @@ public class ScheduleDetail {
     @GeneratedValue
     private Long id;
     @NonNull
+    @JsonFormat(pattern = "HH:mm")
     private Date startTime;
+    @JsonFormat(pattern = "HH:mm")
     private Date arrivalTime;
+    private Integer type; //From or back
     private String remark;
 }
